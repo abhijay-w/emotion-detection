@@ -1,4 +1,4 @@
-# emotion-detection
+# Emotion Detection
 Real-time face detection and emotion classification using fer2013 dataset with a keras CNN model and openCV.
 
 ## Installation
@@ -11,7 +11,7 @@ pip install -r requirements
 ```
 
 <p align="center">
-  <img width="460" height="300" src="demo1.png">
+  <img src="demo1.png">
 </p>
 
 ## Model
