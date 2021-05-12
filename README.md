@@ -9,11 +9,14 @@ Install the required packages in your local environment (ideally virtualenv, con
 ```
 pip install -r requirements
 ```
-
+Run using uvicorn
+```
+uvicorn main:app --reload
+```
 <p align="center">
   <img src="demo1.png">
 </p>
-
+ 
 ## Model
 FER bundles a Keras model.
 
