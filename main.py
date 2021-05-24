@@ -7,25 +7,13 @@ import matplotlib.pyplot as plt
 import aiofiles
 app = FastAPI()
 
-# app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get('/')  # basic get view
-def basic_view():
-    return {"WELCOME": "GO TO /docs route "}
-
-
-@app.get('/predict', response_class=HTMLResponse)  # data input by forms
-async def main():
-    content = """
-    <body>
-    <form action = "/predict" method="post">
-    <p> Upload an image of your face</p> 
-    <input type="file">
-    <input type="submit" value="Submit">
-    </form>
-    </body>"""
-    return HTMLResponse(content= content)
-
+@app.get('/', response_class=HTMLResponse)  # basic get view
+async def getRoot():
+    async with aiofiles.open("templates\index.html", mode="r") as f:
+        data = await f.read()
+    return data
 
 @app.post('/predict')
 async def predict(file: UploadFile = File(...)):
