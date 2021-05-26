@@ -1,5 +1,6 @@
 # Emotion Detection
 Real-time face detection and emotion classification using fer2013 dataset with a keras CNN model and openCV.
+[Collab Notebook](https://colab.research.google.com/drive/1euC0L9zRb_xTmBEPz_-WBTjdLEQJz-fx?usp=sharing)
 
 ## Installation
 
