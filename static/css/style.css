@@ -68,15 +68,13 @@ form input {
   background: #ccc;
 }
 
-.logo{
-    display: inline;
-    width: 50px;
-    height: 50px;
+.logo {
+  display: inline;
+  width: 50px;
+  height: 50px;
 }
 
-#camera{
-  /* display: inline; */
-  display: block;
-  padding-right: 35%;
+#camera {
+  float: left;
+  margin-left: 43%;
 }
-

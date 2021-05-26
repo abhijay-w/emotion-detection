@@ -1,57 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Emotion Detection</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="\static\css\style.css">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Emotion Detection</title>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="\static\css\style.css" />
     <link rel="shortcut icon" href=/static/images/logo.png" type="image/x-icon">
-</head>
-<body>
+  </head>
+  <body>
     <div class="nav">
-        <a href="\\"><p style="padding: 5px; font-size: 20px; color:white; float: left; font-weight: 500; padding-left: 10px;">Home</p></a>
-        
+      <a href="\"
+        ><p
+          style="
+            padding: 5px;
+            font-size: 20px;
+            color: white;
+            float: left;
+            font-weight: 500;
+            padding-left: 10px;
+          "
+        >
+          Home
+        </p></a
+      >
     </div>
-	<div style="margin-top:5px; margin-bottom:20px;">
-        <p class="txt"> Say Cheese! </p>
-        <p class="txts">Click a photo! Our state of the art face recognition system will identify your emotions and generate a personalised report.<img class="ques-image" src="/static/images/face.jpg" alt="face"><br></p>
-		<div id="camera"></div>
-		<input type="button" value="Take a Snap and Download Picture" id="btPic" 
-		onclick="takeSnapShot()" /> 
-	</div>
-	
-	<div id="results" style="display:none">
-	</div>
-	
-</body>
+    <div style="margin-top: 5px; margin-bottom: 20px">
+      <p class="txt">Say Cheese!</p>
+      <p class="txts">
+        Click a photo! Our state of the art face recognition system will
+        identify your emotions and generate a personalised report.<img
+          class="ques-image"
+          src="/static/images/face.jpg"
+          alt="face"
+        /><br />
+      </p>
+      <div class="unit">
+        <div id="camera"></div>
+        <br />
+        <input
+          type="button"
+          value="Take a Snap and Download Picture"
+          id="btPic"
+          onclick="takeSnapShot()"
+        />
 
-<script>
+        <input
+          type="button"
+          value="Proceed Further"
+          onclick=" location.href= '/detect' "
+        />
+      </div>
+    </div>
+
+    <div id="results" style="display: none"></div>
+  </body>
+
+  <script>
     // CAMERA SETTINGS.
     Webcam.set({
-        width: 480,
-        height: 480,
-        image_format: 'jpeg',
-        jpeg_quality: 100,
-		flip_horiz: true
-
+      width: 480,
+      height: 480,
+      image_format: "jpeg",
+      jpeg_quality: 100,
+      flip_horiz: true,
     });
-    Webcam.attach('#camera');
+    Webcam.attach("#camera");
 
     // TAKE A SNAPSHOT.
     takeSnapShot = function () {
-        Webcam.snap(function (data_uri) {
-            downloadImage('yourface', data_uri);
-        });
-    }
+      Webcam.snap(function (data_uri) {
+        downloadImage("yourface", data_uri);
+      });
+    };
 
     // DOWNLOAD THE IMAGE.
     downloadImage = function (name, datauri) {
-        var a = document.createElement('a');
-        a.setAttribute('download', name + '.png');
-        a.setAttribute('href', datauri);
-        a.click();
-    }
-</script>
+      var a = document.createElement("a");
+      a.setAttribute("download", name + ".png");
+      a.setAttribute("href", datauri);
+      a.click();
+    };
+  </script>
 </html>
